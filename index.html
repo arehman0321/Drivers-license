@@ -1,0 +1,160 @@
+<!DOCTYPE html> <html><head>
+        <title>Drivers license</title>
+    <style>.color > span > input {
+    width: 20px;
+}
+
+.color {
+    display: flex;
+    flex-flow: column;
+}
+
+.color > span{
+    padding-left: 100px;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    background-color: green;
+    align-items: center;
+    width: 500px;
+    height: 600px;
+    margin: auto;
+    padding-top: 40px;
+    border-radius: 10%;
+    border: 5px #4169E1
+    ridge;
+    opacity: .8;
+}
+
+input {
+    width: 150px;
+    height: 15px;
+}
+
+button {
+    width: 100px;
+    height: 20px;
+}
+
+.button {
+    padding-top: 10px;
+}
+
+body {
+    background-image: url('http://testphoneapps.com/wp-content/uploads/2017/05/Car-Racing-Games-HD-Wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.yes {
+    padding-top: 25px;
+}
+
+#message {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+}</style></head>
+    <body>
+        <div id="wrapper">
+            <span><input max="99" min="13" class="age" type="number" placeholder="age"></span><br>
+            <span><input class="firstName" type="text" placeholder="first name"></span><br>
+            <span><input class="lastName" type="text" placeholder="last name"></span><br>
+            
+            <form class="color">
+                <h1>What is your eye color?</h1>
+                <span><input type="radio" name="eyes" value="blue">blue</span>
+                <span><input type="radio" name="eyes" value="green">green</span>
+                <span><input type="radio" name="eyes" value="hazel">hazel</span>
+                <span><input type="radio" name="eyes" value="red">red</span>
+            </form>
+                <span class="yes">Birthday:
+                <input id="date" type="date" name="bday"></span>
+            <div class="button">
+                <button onclick="hello()" id="submit">submit</button>
+            </div>
+            <div id="message">
+            </div>
+            <div>
+                <p id="resultFirst"></p>
+                <p id="resultLast"></p>
+            </div>
+        </div>
+    
+<script>
+/*__POPCODESTART__*/
+var age,
+    fName,
+    lName,
+    dob,
+    color;
+    
+
+var val = {
+    firstName: '',
+    lastName: '',
+    age: 0,
+    dob: '00/00/0000',
+    eyeColor: '',
+    calcAge: function (){
+        if ((age === '13') || (age === '14') || (age === '15')){
+            alert('You are too young to drive.');
+        }else if (age === '16'){
+            alert("You are old enough to get a learner's permit!!!");
+        }else if (age >= '17'){
+            alert('You are old enough to drive!!!');
+        }
+    },
+    printInfo: function (){
+        document.querySelector('#message').innerHTML = "<p>Last Name: " + val.lastName + "</p>" + "<p>First Name: " + val.firstName + "</p>" + "<p>Age: " + val.age + "</p>" + "<p>Date of birth: " + val.dob + "</p>" + "<p>Eye Color: " + val.eyeColor + "</p>";
+        
+        if ((val.age === '')){
+            alert('please enter an age');
+            document.querySelector('#message').innerHTML = '';
+        }else if (val.firstName === ''){
+            alert('please enter your first name');
+            document.querySelector('#message').innerHTML = '';
+        }else if (val.lastName === ''){
+            alert('please enter your last name');
+            document.querySelector('#message').innerHTML = '';
+        }else if (val.eyeColor === ''){
+            alert('please pick your eye color');
+            document.querySelector('#message').innerHTML = '';
+        }else if (val.dob === ''){
+            alert('please enter your date of birth');
+            document.querySelector('#message').innerHTML = '';
+        }
+    }
+};
+
+function hello (){
+    age = document.querySelector('.age').value;
+    console.log(age);
+    
+    fName = document.querySelector('.firstName').value;
+    console.log(fName);
+    
+    lName = document.querySelector('.lastName').value;
+    console.log(lName);
+    
+    dob = document.querySelector('#date').value;
+    console.log(dob);
+
+    var input = document.querySelector('.color');
+    color = input.eyes.value;
+    console.log(color);
+    
+    
+    val.age = age;
+    val.firstName = fName;
+    val.lastName = lName;
+    val.eyeColor = color;
+    val.dob = dob;
+    
+    val.calcAge();
+    val.printInfo();
+}</script></body></html>
