@@ -1,0 +1,59 @@
+.color > span > input {
+    width: 20px;
+}
+
+.color {
+    display: flex;
+    flex-flow: column;
+}
+
+.color > span{
+    padding-left: 100px;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    background-color: green;
+    align-items: center;
+    width: 500px;
+    height: 600px;
+    margin: auto;
+    padding-top: 40px;
+    border-radius: 10%;
+    border: 5px #4169E1
+    ridge;
+    opacity: .8;
+}
+
+input {
+    width: 150px;
+    height: 15px;
+}
+
+button {
+    width: 100px;
+    height: 20px;
+}
+
+.button {
+    padding-top: 10px;
+}
+
+body {
+    background-image: url('http://testphoneapps.com/wp-content/uploads/2017/05/Car-Racing-Games-HD-Wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.yes {
+    padding-top: 25px;
+}
+
+#message {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+}
