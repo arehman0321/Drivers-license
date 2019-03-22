@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drivers license</title>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <span><input max='99' min='13' class='age' type='number' placeholder='age'></span><br>
+            <span><input class='firstName' type='text' placeholder='first name'></span><br>
+            <span><input class='lastName' type='text' placeholder='last name'></span><br>
+            
+            <form class='color'>
+                <h1>What is your eye color?</h1>
+                <span><input type='radio' name='eyes' value='blue'>blue</span>
+                <span><input type='radio' name='eyes' value='green'>green</span>
+                <span><input type='radio' name='eyes' value='hazel'>hazel</span>
+                <span><input type='radio' name='eyes' value='red'>red</span>
+            </form>
+                <span class='yes' >Birthday:
+                <input id='date' type="date" name="bday"></span>
+            <div class='button'>
+                <button onclick='hello()' id='submit'>submit</button>
+            </div>
+            <div id='message'>
+            </div>
+            <div>
+                <p id='resultFirst'></p>
+                <p id='resultLast'></p>
+            </div>
+        </div>
+    </body>
+</html>
